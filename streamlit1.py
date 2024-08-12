@@ -5,7 +5,7 @@ import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 import tensorflow as tf
 from keras.preprocessing.image import load_img
 from keras.models import Sequential, Model
@@ -18,8 +18,8 @@ from PIL import Image
 warnings.filterwarnings('ignore')
 
 # Streamlit configurations
-st.set_option('deprecation.showfileUploaderEncoding', False)
-st.title("Gender Prediction Using CNN (Pytorch)")
+#st.set_option('deprecation.showfileUploaderEncoding', False)
+st.title("Gender Prediction Using CNN(Pytorch)")
 
 # Function to extract the zip file
 def extract_zip(zip_file_path, extract_to_path):
@@ -78,7 +78,7 @@ def extract_features(images):
     return features
 
 # File uploader
-uploaded_file = st.file_uploader("Choose a zip file containing the UTKFace dataset", type="zip")
+uploaded_file = st.file_uploader("Choose a zip file containing the dataset", type="zip")
 
 if uploaded_file is not None:
     with st.spinner('Extracting zip file...'):
